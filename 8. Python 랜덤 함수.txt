@@ -1,0 +1,60 @@
+Python 랜덤 함수
+
+1. random()
+
+0.0 ~ 1.0 미만의 임의의 값 생성
+
+from random import random
+print(random()) -> 실수 0.0 ~ 1.0 사이의 임의의 값 생성
+
+0.0 ~ 10.0 미만의 임의의 값 생성
+print(random() * 10)
+
+0 ~ 10 미만의 임의의 값 생성
+print(int(random() * 10))
+
+1 ~ 10 까지의 임의의 값 생성
+print(int(random() * 10) + 1)
+
+2. randint()
+from random import randint
+print(randint(5, 10)) # 5 ~ 10 까지의 임의의 값 생성
+
+3. randrange()
+from random import randrange
+print(randrage(5, 10)) # 5 ~ 10 미만까지의 임의 값 생성
+print(randrage(5, 10, 2)) # 5부터 2씩 증가 된 값에 대해 10 미만까지의 임의 값 생성
+
+4. 임의의 문자 생성
+
+1) chr() 함수
+from random import randint
+print(chr(randit(65, 90))) # 'A', 'Z'
+print(chr(randint(97, 122))) # 'a', 'z'
+
+과제 1)
+
+1. 1 ~ 100 까지의 랜덤 값을 출력하는 코드를 작성하시오 (단, randint(), randrange()는 사용 하지 않음)
+
+from random import random
+print(int(random() * 100) + 1)
+
+2. 100 ~ 999 까지 랜덤 값을 출력하는 코드를 작성하시오 (단, randint(), randrange()는 사용 하지 않음)
+from random import random
+print(int(random() * 900) + 100)
+
+3. 'A' ~ 'Z' 까지 임의의 문자 3자리를 출력하는 코드를 작성하시오 (단, randint(), randrange()는 사용 하지 않음)
+a = chr(int(random() * 26) + 65)
+b = chr(int(random() * 26) + 65)
+c = chr(int(random() * 26) + 65)
+print(a + b + c)
+
+4, 1 ~ 99 까지의 랜덤 값에 대해 짝수면 True, 홀수면 False가 나오도록 하시오
+rand = int(random() * 99) + 1
+print('{} : {}'. format(rand, not bool(rand % 2)))
+print('{} : {}'.format(rand, rand % 2 == 0))
+print(bool(int(random() * 100) / 2 == 0))
+
+
+
+
