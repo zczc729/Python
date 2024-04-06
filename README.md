@@ -16,3 +16,13 @@ day6 - Python 사용자 입력
 day7 - Python 연산자
 
 day8 - Python 랜덤 함수
+
+day9 - Python 조건문
+
+day10 - Python 반복문 (for)
+
+day11 - Python 반복문 (while)
+
+day12 - Python 튜플
+
+day13 - Python 리스트
