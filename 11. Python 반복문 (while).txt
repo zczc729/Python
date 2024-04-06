@@ -1,0 +1,111 @@
+1. 기본 사용법
+
+while 조건문:
+indent	수행 코드
+	수행 코드
+
+2. 비교 연산자 사용
+
+x = 0
+
+while x < 3 :
+	수행 코드
+	x= x + 1
+
+3. 멤버 연산자 사용
+
+x = 0
+while x in (0, 1, 2):
+	수행 코드
+	x = x + 1
+
+4. 무한 반복
+
+x = 0
+while true:
+	print(x)
+	x = x + 1 
+# Ctrl + C 로 강제 종료
+
+5. 반복의 종료
+
+x = 0
+while True:
+	if x % 2 == 0:
+		break
+	print(x)
+	x = x + 1
+
+6. 반복의 처음으로 이동
+
+x = 0
+while True:
+	if x % 2 == 0:
+		continue
+	print(x)
+	x = x + 1
+
+7. 중첩 반복문의 break, continue
+
+x = 0
+y = 0
+while True:
+	while True:
+		if x == 5:
+			y = y + 1
+			break
+	x = x + 1
+
+x = 0
+while True:
+	while True:
+		if x == 5:
+		y = y + 1
+		continue
+	x = x + 1
+
+과제 1)
+
+1. 1 ~ 20 까지의 정수 값을 출력 하는 코드를 작성 하시오 (while문으로만 작성)
+
+x = 0
+while x < 20:
+    x += 1
+    print(x, end=' ')
+
+2. 1 ~ 100 까지의 누적 합을 구하는 코드를 작성 하시오
+
+y = 0
+tot = 0
+while y < 100:
+    y += 1
+    tot += y
+print(tot)
+
+3. 사용자가 입력한 값을 초과하지 않는 한도에서의 누적 합을 구하는 코드를 작성하시오 (누적 합은 랜덤으로 1 ~ 10 까지 생성)
+
+from random import randint
+
+num = int(input('정수 입력 : '))
+rand = randint(1, 10)
+tot = 0
+cnt = 0
+while True:
+    tot += rand
+    cnt += 1
+    if num <= tot:
+        tot = tot - rand
+        print('누적합 : {}\n반복 횟수 : {}'.format(tot, cnt))
+        break
+
+4. 사용자가 입력한 정수 값에 대해 2진수로 변환하여 출력하는 코드를 작성하시오
+
+num1 = int(input('정수 입력 : '))
+결과 = ''
+while True:
+    나머지 = num1 % 2
+    num1 = num1 // 2
+    결과 = str(나머지) + 결과
+    if num1 == 0:
+        print(결과)
+        break

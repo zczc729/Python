@@ -1,0 +1,138 @@
+1. 기본 사용 법
+
+for 변수명 in range(반복 횟수):
+indent	수행 코드
+indent	수행 코드
+
+for cnt in range(10):
+	print('반복 출력')
+
+for cnt in range(10):
+	print('{} 번째 반복.'format(cnt))
+
+2. range() 함수 응용
+
+1) range(종료값)
+# 종료값 = 5 일 경우 0 ~ 4까지
+
+2) range(시작값, 종료값)
+# 시작값 = 2, 종료값 = 5일 경우 2 ~ 4까지
+
+3) range(시작값, 종료값, 증가값)
+# 기본적으로 증가값은 +1
+
+for x in range(10):
+    print(x)
+# 0 ~ 9
+
+for x in range(5, 10):
+    print(x)
+# 5 ~ 9
+
+for x in range(1, 10, 2):
+    print(x)
+# 1, 3, 5, 7, 9
+
+for x in range(10, 0, -1):
+    print(x, end='')
+# 10987654321
+
+3. range() 함수 대신 사용 하는 방법
+
+for char in 'abcde':
+	print(char)
+
+for tup in (1, 2, 3, 4, 5):
+	print(tup)
+	
+4. 중첩 반복
+
+for x in rnage(3):
+	for y in range(5):
+		수행코드
+		수행코드
+
+for x in range(1,10):
+    for y in range(1, 10):
+
+        print('{} x {} = {}'.format(x, y, x * y))
+
+
+과제 1)
+
+1. 1 ~ 20 까지의 정수 값을 출력하는 코드를 작성하시오
+
+for num1 in range(1, 21):
+    print(num1)
+
+2. 1 ~ 20 까지의 정수 값 중 짝수에 해당 하는 값 만을 출력 하는 코드를 작성 하시오
+
+for num2 in range(1, 21):
+    if num2 % 2 == 0:
+        print(num2)
+
+for num2 in range(2, 21, 2):
+        print(num2)
+
+3. 100 ~ 51 까지의 정수 값 중 홀수에 해당 하는 값 만을 출력하는 코드를 작성하시오
+
+for x in range(100, 50, -1):
+    if x % 2 == 1:
+        print(x, end=' ')
+
+4. 1 ~ 50 까지의 정수 값을 출력 할 때 한 줄에 5개의 값이 출력 되도록 하시오
+
+for x in range(1, 51):
+    if x % 5 == 0:
+        print(x)
+    else :
+        print(x, end=' ')
+
+5. 1 ~ 100까지의 누적 합을 구하는 코드를 작성 하시오
+
+num1 = 0
+for x in range (1, 101):
+    num1 += x
+
+print(num1)
+
+6. 다음 문자열 변수에서 공백을 제외한 문자의 수를 구하시오
+
+st = 'Python basic program language'
+num2 = 0
+
+for x in st:
+    if x != ' ':
+        num2 += 1
+
+print(num2)
+
+7. 'a' ~ 'z'까지의 임의의 문자열을 8자리씩 총 10개를 생성하는 코드를 작성하시오 
+# 65 ~ 90 대문자
+# 97 ~ 122 소문자
+
+from random import randint
+
+for x in range(10):
+    for y in range(8):
+        n1 = chr(randint(97,122))
+        print(n1, end='')
+    print()
+
+8. 'a' ~ 'A' ~ 'Z', '0' ~ '9' 까지 임의의 문자열을 16자리씩 총 10개를 생성하는 코드를 작성하시오
+
+from random import randint
+
+for x in range(10):
+    for y in range(16):
+        z = randint(0, 2)
+        if z == 0:
+            print(chr(randint(97,122)), end='')
+        if z == 1:
+            print(chr(randint(65,90)), end='')
+        if z == 2:
+            print(randint(0,9), end='')
+    print()
+
+
+

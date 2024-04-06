@@ -1,0 +1,215 @@
+1. 기본 사용법
+
+if 조건식:
+indent 수행코드/수행코드
+
+조건식 -> 비교/논리/멤버/식별 연산식
+indent -> 들여쓰기
+
+2. 조건 - Boolean
+
+if True:
+	print('a')
+if False:
+	print('b')
+
+3. 조건 - 비교 연산자
+
+x = 15
+if x > 10:
+	print('x는 10보다 크다.')
+
+4. 조건 - 멤버 연산자
+
+x = 15
+if x in (10,11,12):
+	print('x는 10, 11, 12 중 하나에 포함된다.')
+
+5. 조건 - 식별 연산자
+
+x = 15
+if type(x) is int:
+	print('x는 int형 자료 이다.')
+
+6. 조건 - 비교, 논리 연산자
+
+x = 15
+if x > 10 and x != 15:
+	print('x는 10보다 크면서 15는 아니다.')
+
+7. if .... else문
+
+if 조건식:
+	수행코드
+else :
+	수행코드
+
+if True:
+    print('True')
+else :
+    print('False')
+
+if False:
+    print('a')
+else :
+    print('b')
+
+number = int(input('정수 값 입력 : '))
+
+if number % 3 == 0:
+	print('3의 배수이다.')
+else :
+	print('3의 배수가 아니다')
+
+과제 1)
+
+1. 사용자로부터 정수 값을 입력 받고 입력 받은 값이 짝수 또는 홀수 인지를 구분하는 코드를 작성하시오
+
+number1 = int(input('정수 값 입력 : '))
+
+if number1 % 2 == 0 :
+    print('{}는 짝수 입니다.'.format(number1))
+else :
+    print('{}는 홀수 입니다.'.format(number1))
+
+2. 사용자로 부터 2개의 정수 값을 입력 받아 빼기 계산을 할 때 항상 정수가 나올 수 있도록 하시오
+
+number2 = int(input('첫 번 째 수 입력 : '))
+number3 = int(input('두 번 째 수 입력 : '))
+
+if number2 > number3 :
+    print('{} - {} = {}'.format(number2, number3, number2 - number3))
+else :
+    print('{} - {} = {}'.format(number3, number2, number3 - number2))
+
+3. 사용자로부터 2개의 정수 값을 입력 받고 홀, 짝을 비교하였을 때 2개의 값이 전부 홀수 또는 짝수이, 2개의 정수 값을 더하고 2개의 값이 홀-짝 또는 짝-홀이면. 2개의 정수 값을 곱하시오
+
+num1 = int(input('정수 입력 : '))
+num2 = int(input('정수 입력 : '))
+
+if (num1 % 2 == 0 and num2 % 2 == 0) or (num1 % 2 == 1 and num2 % 2 == 1) :
+    print('{} + {} = {}'.format(num1, num2, num1 + num2))
+else :
+    print('{} x {} = {}'.format(num1,num2, num1 * num2))
+
+
+4. 랜덤 함수를 통해 생성 된 2개의 값(10~ 99 까지)으로 더하기 문제를 만들고 만들어진 문제를 사용자가 풀어보는 형식의 코드를 작성하시오
+
+from random import randint
+
+n1 = randint(10, 100)
+n2 = randint(10, 100)
+
+print('{} + {} = '.format(n1,n2), end='')
+n3 = int(input())
+
+if n3 == n1 + n2:
+    print('정답 입니다.')
+else :
+    print('오답 입니다.')
+
+8. if .... elif .... else
+
+if 조건식:
+	수행 코드
+elif 조건식:
+	수행코드
+else :
+	수행 코드
+
+score = int(input('점수 입력  : '))
+
+if 90 <= score <= 100:
+	print('수 입니다.')
+elif 80 <= score < 90:
+	print('우 입니다.')
+elif 70 <= score < 80:
+	print('미 입니다.')
+elif 60 <= score < 70:
+	print('양 입니다.')
+else:
+	print('가 입니다.')
+
+9. if문의 반복 사용과 다른점
+
+if 조건식1:
+	수행코드1
+if 조건식2:
+	수행코드2
+else :
+	수행코드3
+
+조건식1 = True, 조건식2 = False
+
+### 출력 결과
+	수행코드1, 수행코드3
+
+10. 중첩 if문
+
+if 조건식:
+	수행코드
+	if조건식:
+		수행코드
+		수행코드
+
+score = int(input('점수 입력 : '))
+
+if 0<= score <= 100:
+	if 90 <= score <= 100:
+		print('수 입니다.')
+	elif 80 <= score < 90:
+		print('우 입니다.')
+		...
+		생략
+	else:
+		print('가 입니다.')
+else :
+	print('잘못된 입력 값 입니다.')
+
+과제 2)
+1. 사용자로부터 이름, 키, 체중 값을 입력 받아 비만도를 구하고 결과를 출력 할 때 비만도 값 100을 기준으로 100미만이면 저체중, 100 이상 110 미만은 정상, 110 이상 120 미만 과체중, 120이상 130 미만 비만, 130 이상은 고도 비만으로 출력 하시오
+
+비만도 계산식 : 비만도(%) = 현재 체중 / 표준 체중 * 100
+표준 체중 계산 식 : 표준 체중 = (현재 키 - 100) * 0.9
+
+출력 예제 : 홍길동 님의 비만도는 112.15%로 과체중입니다.
+
+name = input('이름 : ')
+height = float(input('키 : '))
+weight = float(input('몸무게 : '))
+std_weight = (height - 100) * 0.9
+bimando = weight / std_weight * 100
+
+if bimando < 100:
+    print('{} 님의 비만도는 {:.2f}%로 저체중 입니다.'.format(name, bimando))
+elif 100 <= bimando < 110:
+    print('{} 님의 비만도는 {:.2f}%로 정상 입니다.'.format(name, bimando))
+elif 110 <= bimando < 120:
+    print('{} 님의 비만도는 {:.2f}%로 과체중 입니다.'.format(name, bimando))
+elif 120 <= bimando < 130:
+    print('{} 님의 비만도는 {:.2f}%로 비만 입니다.'.format(name, bimando))
+else :
+    print('{} 님의 비만도는 {:.2f}%로 고도 비만 입니다.'.format(name, bimando))
+
+2. 윤년을 구하는 코드를 작성 하시오
+
+- 4의 배수는 윤년이 된다. 그 외는 평년
+- 4의 배수면서 100의 배수인 경우는 평년이다. 그 외는 윤년
+- 4 그리고 100의 배수이면서 400의 배수인 경우 윤년이다.
+그 외는 평년
+
+출력 예제 : 2017년은 평년 입니다.
+
+year = int(input('연도 입력 : '))
+nyeon = ''
+
+if year % 4 == 0:
+    nyeon = '윤년'
+    if year % 100 == 0:
+        nyeon = '평년'
+        if year % 400 == 0:
+            nyeon = '윤년'
+else :
+    nyeon = '평년'
+
+print('{}년은 {} 입니다.'.format(year, nyeon))
