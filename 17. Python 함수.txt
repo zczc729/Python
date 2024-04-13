@@ -1,0 +1,233 @@
+
+1. 함수 기본 생성 방법
+
+def 함수이름():
+	수행 코드
+	수행 코드
+
+2. 함수의 문서화
+
+def fucn():
+	'''함수에 대한 문서화'''
+	수행 코드
+	수행 코드
+
+3. pass
+
+def func():
+	pass
+
+# 일시적으로 만들어서 사용은 가능하나 기능 구현은 없음
+
+
+4. 함수의 호출
+
+def func():
+	수행 코드
+	수행 코드
+
+func()
+
+5. 함수 사용 예
+
+def funcHello():
+	print('Hello Python')
+
+def funcVersion():
+	print('''
+	Title: Python Programming Basic
+	Version : 1.0 Ver''')
+
+funcHello()
+funcVersion()
+
+6. 반환 값이 있는 함수
+
+def func():
+	return 반환값
+
+func()
+
+# 정수 반환
+
+def funcInt():
+	return(10)
+
+var - funcInt() + 10
+print(var)
+
+# 실수 반환
+
+def funcFloat():
+	return 0.1
+
+var = funcFloat() + 10
+print(var)
+
+# 문자열 반환
+
+def funcStr():
+	return 'string'
+
+var = funcStr() + 'python'
+print(var)
+
+# 튜플
+
+def funcTuple():
+	return (1, 2, 3)
+
+var = funcTuple()
+print(var)
+
+# 리스트
+
+def funcList():
+	return [1, 2, 3]
+
+var = funcList()
+print(var[0], var[1], var[2])
+
+# 사전
+
+def funcDict():
+	return {'a':1, 'b':2}
+
+var = funcDict()
+print(var['a'], var['b'])
+
+7. argument(인자)
+
+def func(arg):
+	print(arg)
+
+func(1)
+
+def func(arg1, arg2):
+	print(arg1, arg2)
+
+func('a', 'b')
+
+8. default argument(기본 인자)
+
+def func(arg = 1):
+	print(arg)
+
+func(5)
+func()
+
+def func(arg1, arg2 = 2):
+	print(arg1, arg2)
+
+func(5, 10)
+func(5)
+
+9. keyword argument(키워드 인자)
+
+def func(arg1, arg2):
+	print(arg1, arg2)
+
+func(5, 10)
+func(arg2 = 3, arg1 = 1)
+
+def func(arg1, arg2 = 1, arg3 = 2):
+	print(arg1, arg2, arg3)
+
+func(5, 2, 4)
+func(5, arg3 = 4)
+
+10. variable argument(가변 인자)
+
+def func(arg, *args):
+	print(arg, args)
+
+func(1, 2, 3, 4, 5)
+
+11. keyword variable argument(키워드 가변 인자)
+
+def func(arg, **kwargs):
+	print(arg, kwargs)
+
+func(1, key1 = 10, key2 = 'a')
+
+12. global 변수
+
+a = 1
+b = 2
+
+def func():
+	print(a,b)
+
+func()
+print(a,b)
+
+13. local 변수
+
+def func():
+	a = 1
+	b = 2
+	print(a, b)
+
+func()
+print(a, b)
+
+a, b = 1, 2
+
+def func():
+	a, b = 3, 4
+	print(a, b)
+
+func()
+print(a, b)
+
+
+과제 1)
+
+1. prigramInfo() 함수를 만들어서 다음과 같은 정보가 표시 될 수 있도록 하시오
+
+	Version : 1.0
+	Update Date : 2017-01-01
+	Author : Project Python
+
+def programInfo():
+        print('''
+    Version : 1.0
+    Update Date : 2017-01-01
+    Author : Project Python
+            ''')
+
+programInfo()
+
+2. 1개 이상의 정수, 실수 값을 인자로 받아 가장 큰 값 또는 가장 작은 값을 반환하는 pyMax(), pyMin() 함수를 만드시오
+
+def pyMax(*args):
+    mx = args[0]
+    for x in args[1:]:
+        if mx < x:
+            mx = x
+    return mx
+
+def pyMin(*args):
+    mn = args[0]
+    for x in args[1:]:
+        if x < mn:
+            mn = x
+    return mn
+        
+
+print('큰 값 :', pyMax(145,16,7,131256,1714))
+print('작은 값 :', pyMin(145,16,7,131256,1714))
+
+3. 0 ~ N 까지 또는 M ~ N 까지의 임의 값을 반환하는 함수를 만드시오
+
+from random import random
+
+# 0 ~ N, M ~ N
+def myrandom(min, max = 0):
+    if max == 0:
+        min, max = max, min
+        
+    return int(random() * (max - min + 1)) + min
+
+print(myrandom(5))
+print(myrandom(1, 5))

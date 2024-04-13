@@ -1,0 +1,142 @@
+1. 인덱싱
+
+st = 'string indexing'
+
+print(st[0])
+print(st[7])
+
+2. 슬라이싱
+st = 'string indexing'
+
+print(st[:6])
+print(st[7:])
+
+3. 문자열 - 반복문
+
+st = 'stirng for'
+
+for x in st:
+	print(x)
+
+4. 문자열 함수
+
+   함수				설명
+find(str)		문자열에서 특정 문자열을 찾아 해당 문자의 Index 값을 반환
+count(str)		문자열에서 특정 문자열을 찾아 해당 문자열의 수를 반환
+lower()			문자열에서 영문자를 소문자로 변경하여 반환
+upper()			문자열에서 영문자를 대문자로 변경하여 반환
+strip()			문자열의 앞뒤 공백을 제거함
+lstrip()		문자열의 왼쪽 공백을 제거함
+rstrip()		문자열의 오른쪽 공백을 제거함
+replace(old, new)	문자열의 특정 문자열을 변경함
+split(str)		문자열의 특정 문자열을 기준으로 분리함
+
+
+# find 예제
+
+st = 'python string'
+
+print(st.find('string'))
+
+# count 예제
+
+st = 'python string'
+
+print(st.count('t'))
+
+# lower() 예제
+
+st = 'PYTHON STRING'
+
+print(st.lower())
+print(st)
+
+# upper() 예제
+
+st = 'python string'
+
+print(st.upper())
+print(st)
+
+# strip 예제
+
+st = '  python string  '
+
+print('|' + st + '|')
+print('|' + st.strip() + '|')
+print('|' + st.lstrip() + '|')
+print('|' + st.rstrip() + '|')
+print('|' + st + '|')
+
+# replace 예제
+
+st = 'python string'
+
+print(st.replace('string','문자열'))
+print(st)
+
+# split 예제
+
+st = 'python string'
+
+print(st.split(' '))
+
+st = 'python,string,integer,float'
+
+print(st.split(','))
+
+
+과제 1)
+
+1. 다음 조건을 보고 회원 가입을 위한 프로그램 코드를 작성 하시오
+- 아디디는 반드시 10자리 이상
+- 패스워드는 반드시 8 ~ 16자리 사이
+- 패스워드에 아이디가 포함되면 안됨
+- 패스워드에는 다음의 특수 문자가 반드시 하나 이상 포함 (~, !, @, #, $, %, ^, &, *, _, ?)
+
+user_id = input('아이디 입력 : ')
+
+while True:
+    if len(user_id) < 10:
+        print('아이디는 10자리 이상이여야 합니다.')
+    else:
+        user_pw = input('비밀번호  입력 : ')
+        if 8 <= len(user_pw) <= 16:
+            if user_pw not in user_id:
+                cnt = 0
+                for k in '~!@#$%^&*_?':
+                    if k in user_pw:
+                       cnt = 1
+                       break;
+                if cnt == 0:
+                    print('패스워드에는 특수 문자가 반드시 하나 이상 포함 되야 합니다.')
+                    break
+                else:
+                    print('회원 가입 성공')
+                    break
+            else:
+                print('패스 워드에는 아이디가 포함 될 수 없습니다.')
+                break;
+        else:
+            print('패스 워드는 8 ~ 16 자리 사이여야 합니다.')
+            break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

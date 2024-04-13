@@ -1,0 +1,134 @@
+1. 리스트 함수
+
+    함수				설명
+append(value)		리스트 끝에 값을 추가함
+extend(iter)		리스트 끝에 list, tuple, dict의 값을 하나씩 추가함
+insert(idx, value)	특정 인덱스 위치에 값을 추가함
+pop([idx])		마지막 인덱스의 값을 반환 후 삭제함
+			인덱스 번호를 지정 할 수도 있음
+remove(value)		특정 값에 해당하는 것을 찾아 삭제함
+clear()			모든 값을 삭제하여 빈 리스트만 남김
+count(value)		리스트에서 일치하는 값의 수를 반환 함
+index(value)		리스트에서 일치하는 값의 인덱스 번호를 반환 함
+reverse()		리스트의 모든 값을 뒤집어 나열 함
+sort([rever=False])	리스트의 값을 오름차순(False), 내림차순(True) 정렬함
+
+# append 에제
+lst = [1, 2, 3]
+
+lst.append('a')
+lst.append([4, 'b'])
+
+# extend 예제
+lst = [1, 2, 3]
+lst.extend(['a', 'b', 'c'])
+
+# insert 예제
+lst = [1, 2, 3]
+lst.insert(1, 'b')
+
+# pop 예제
+lst = [1, 2, 3]
+
+lst.pop()
+lst.pop(0)
+
+# remove 예제
+
+lst = [1, 2, 3]
+
+lst.remove(2)
+
+# clear 예제
+
+lst = [1, 2, 3]
+
+lst.clear()
+
+# count 예제
+
+lst = [1, 2, 3, 1]
+
+print(lst.count(1))
+
+# index 예제
+
+lst = [1, 2, 3, 1]
+
+print(lst.index(2))
+print(lst.index(1, 1))
+
+# reverse 예제
+
+lst = [1, 3, 2]
+
+lst.reverse()
+print(lst)
+
+# sort 예제
+
+lst = [1, 3, 2]
+
+lst.sort()
+print(lst)
+
+lst.sort(reverse=True)
+print(lst)
+
+
+과제 1)
+
+menu = [
+	['칼국수', 6000], 
+	['비빔밥', 5500], 
+	['돼지 국밥', 7000], 
+	['돈까스', 7000], 
+	['김밥', 2000], 
+	['라면', 2500]
+]
+
+위의 리스트 구조를 보고 아래에서 요구하는 값을 출력하는 코드를 작성 하시오
+
+1. 비빔밥과 돈까스의 가격을 출력 하시오
+
+for k, v in menu:
+    if k in ('비빔밥', '돈까스'):
+        print('{} 가격 : {}'.format(k, v))
+
+2. 사용자 입력으로 메뉴와 가격을 입력 받아 menu 변수에 자료를 추가하는 코드를 작성하시오
+
+user_menu = input('메뉴 입력 :  ')
+user_price = int(input('가격 입력 :  '))
+
+menu.append([user_menu,user_price])
+
+print(menu)
+
+3. 사용자 입력으로 메뉴와 가격을 입력 받아 menu 변수에 자료를 추가 할 때 기존에 동일한 메뉴가 존재하는 경우 가격만 변경 되도록 코드를 작성 하시오
+
+user_menu = input('메뉴 입력 :  ')
+user_price = int(input('가격 입력 :  '))
+s = 0
+
+
+for k in range(len(menu)):
+    if menu[k][0] == user_menu:
+        s = 1
+        menu[k][1] = user_price
+if s == 0:
+    menu.append([user_menu,user_price])
+
+print(menu)
+
+4. 메뉴를 자동으로 선택하여 출력하는 코드를 작성 하시오 (random()함수 사용)
+
+from random import randint
+
+auto = randint(0, len(menu) - 1)
+
+print('메뉴 : {} \n가격 : {}'.format(menu[auto][0], menu[auto][1]))
+
+
+
+
+
