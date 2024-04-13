@@ -26,3 +26,11 @@ day11 - Python 반복문 (while)
 day12 - Python 튜플
 
 day13 - Python 리스트
+
+day14 - Python 리스트 함수
+
+day15 - Python 사전
+
+day16 - Python 문자열
+
+day17 - Python 함수
